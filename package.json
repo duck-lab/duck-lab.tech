@@ -1,0 +1,25 @@
+{
+  "name": "duck-lab.tech",
+  "version": "0.0.1",
+  "description": "The oficial site of duck-lab.",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel ./source/index.html",
+    "build": "parcel build ./source/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duck-lab/duck-lab.tech.git"
+  },
+  "author": "ole3021 (Oliver.W)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duck-lab/duck-lab.tech/issues"
+  },
+  "homepage": "https://github.com/duck-lab/duck-lab.tech#readme",
+  "devDependencies": {
+    "node-sass": "^4.7.2",
+    "parcel-bundler": "^1.4.1"
+  }
+}

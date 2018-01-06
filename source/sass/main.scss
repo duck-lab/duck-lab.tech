@@ -1,0 +1,218 @@
+/*
+COLORS:
+
+Main:
+Secondary:
+Third:
+
+Light Yellow: #FFF6B4
+Medium Yellow: #FEBC46
+Dark Yellow: #D45411
+
+*/
+// Main Colors
+$color-primary: #FEBC46;
+$color-primary-light: #FFF6B4;
+$color-primary-dark: #D45411;
+
+// Used Colors
+$color-grey-dark: #777777;
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+/* Used to fix float problem */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  /* Define project wide font and color */
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 1.6rem;
+
+  box-sizing: border-box; /*Remove padding and border from height*/
+}
+
+// #### Header
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary, 0.8),
+    rgba($color-primary, 0.6)),
+    url("https://images.unsplash.com/photo-1477209560495-270790f2251a?auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  
+  clip-path: polygon(0 0, 100% 0, 100% 83%, 0 100%);
+
+  &__logo-box {
+    position: absolute;
+    top: 2.5rem;
+    left: 2.5rem;
+  }
+
+  &__logo {
+    height: 4.4rem;
+  }
+
+  &__title-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+  
+  margin-bottom: 4.4rem;
+
+  &--main {
+    display: block;
+    font-size: 3.75rem;
+    font-weight: 900;
+    letter-spacing: 2rem;
+  }
+  
+  &--sub {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 400;
+    letter-spacing: 0.2rem;
+  }
+}
+// #### Header
+
+// #### Button
+.btn {
+  &:link,
+  &:visited {
+    position: relative;/* For back hidden button */
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    border-radius: 0.75rem;
+    transition: all .2s;
+    font-weight: 900;
+  }
+
+  &:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.37rem 0.5rem rgba(0, 0, 0, 0.2);
+
+    &::after {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform:  translateY(-0.06rem);
+    box-shadow: 0 0.25rem 0.37rem rgba(0, 0, 0, 0.2);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      animation-delay: moveInBottom 0.5s ease-out 0.75s;
+      background-color: $color-white;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 0.8rem;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+  }
+}
+
+// #### Button
+
+// #### Animation
+.ani-left-in {
+  animation: moveInLeft 1s;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-6.25rem);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.ani-right-in {
+  animation: moveInRight 1s;
+}
+
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(6.25rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.ani-bottom-in {
+  animation: moveInBottom 1s;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(6.25rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+  // &-header-button {
+  //   animation-fill-mode: backwards;
+  // }
+
+// #### Animation
